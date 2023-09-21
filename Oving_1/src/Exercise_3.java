@@ -1,4 +1,4 @@
-public class exercise_3 {
+public class Exercise_3 {
     public static void main(String[] args) {
         // Creating a dataset
         int[] dataset = {0, 60, 3600, 3660, 3661};
