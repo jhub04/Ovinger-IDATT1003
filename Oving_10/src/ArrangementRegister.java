@@ -20,16 +20,6 @@ public class ArrangementRegister {
         return arrangementer.size();
     }
 
-    /*public List<Arrangement> sammeSted(String sted) {
-        List<Arrangement> nyListe = new ArrayList<>();
-        for (Arrangement arrangement : arrangementer) {
-            if (arrangement.getSted().equalsIgnoreCase(sted)) {
-                nyListe.add(arrangement);
-            }
-        }
-        return nyListe;
-    }*/
-
     public List<Arrangement> sammeSted(String sted) {
         return arrangementer.stream()
                 .filter(a -> a.getSted().equalsIgnoreCase(sted))
@@ -37,46 +27,35 @@ public class ArrangementRegister {
     }
 
     public List<Arrangement> sammeDato(int dato){
-        List<Arrangement> nyListe = new ArrayList<>();
-        for (Arrangement arrangement : arrangementer) {
-            if (arrangement.getDato() == dato) {
-                nyListe.add(arrangement);
-            }
-        }
-        return nyListe;
+        return arrangementer.stream()
+                .filter(a -> a.getDato() == dato)
+                .collect(Collectors.toList());
     }
 
-
     public List<Arrangement> innenforDatoer (int startDato, int sluttDato){
-        List<Arrangement> nyListe = new ArrayList<>();
-        for (Arrangement arrangement : arrangementer) {
-            if (arrangement.getDato() >= startDato && arrangement.getDato() <= sluttDato) {
-                nyListe.add(arrangement);
-            }
-        }
-        Collections.sort(nyListe, new DatoComparator());
-
-        return nyListe;
+        return arrangementer.stream()
+                .filter(a -> a.getDato() >= startDato && a.getDato() <= sluttDato)
+                .sorted(new DatoComparator())
+                .collect(Collectors.toList());
     }
 
     public List<Arrangement> sortertEtterSted(){
-        List<Arrangement> nyListe = new ArrayList<Arrangement>(arrangementer);
-        Collections.sort(nyListe, new StedComparator());
-        return nyListe;
+        return arrangementer.stream()
+                .sorted(new StedComparator())
+                .collect(Collectors.toList());
     }
 
     public List<Arrangement> sortertEtterType(){
-        List<Arrangement> nyListe = new ArrayList<Arrangement>(arrangementer);
-        Collections.sort(nyListe, new TypeComparator());
-        return nyListe;
+        return arrangementer.stream()
+                .sorted(new TypeComparator())
+                .collect(Collectors.toList());
     }
 
     public List<Arrangement> sortertEtterTidspunkt(){
-        List<Arrangement> nyListe = new ArrayList<Arrangement>(arrangementer);
-        Collections.sort(nyListe, new TidspunktComparator());
-        return nyListe;
+        return arrangementer.stream()
+                .sorted(new TidspunktComparator())
+                .collect(Collectors.toList());
     }
-
     private static class DatoComparator implements Comparator<Arrangement> {
         @Override
         public int compare(Arrangement a1, Arrangement a2) {
@@ -103,6 +82,7 @@ public class ArrangementRegister {
             return Long.compare(a1.getTidspunkt(), a2.getTidspunkt());
         }
     }
+
 
     public String toString(){
         String utskrift = "";
