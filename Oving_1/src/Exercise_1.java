@@ -1,5 +1,5 @@
 
-public class exercise_1 {
+public class Exercise_1 {
     public static void main(String[] args) {
         // Creating testing dataset
         double[] dataset = {0, 1, 2.5, 5, 10};
