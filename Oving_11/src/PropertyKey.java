@@ -37,4 +37,9 @@ public class PropertyKey {
   public int hashCode() {
     return Objects.hash(municipalityNumber, lotNumber, sectionNumber);
   }
+
+  @Override
+  public String toString() {
+    return this.municipalityNumber + "-" + this.lotNumber + "/" + this.sectionNumber;
+  }
 }

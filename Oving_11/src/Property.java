@@ -62,8 +62,4 @@ public class Property {
   public void setNameOfOwner(String nameOfOwner) {
     this.nameOfOwner = nameOfOwner;
   }
-
-  public String toString() {
-    return this.municipalityNumber + "-" + this.lotNumber + "/" + this.sectionNumber;
-  }
 }
