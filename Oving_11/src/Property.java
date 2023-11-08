@@ -20,7 +20,8 @@ public class Property {
 
   }
 
-  public Property(int municipalityNumber, String municipalityName, int lotNumber, int sectionNumber, float area, String nameOfOwner) {
+  public Property(int municipalityNumber, String municipalityName, int lotNumber, int sectionNumber,
+      float area, String nameOfOwner) {
     this.municipalityNumber = municipalityNumber;
     this.municipalityName = municipalityName;
     this.lotNumber = lotNumber;
@@ -34,35 +35,35 @@ public class Property {
     return municipalityNumber;
   }
 
-        public String getMunicipalityName() {
-        return municipalityName;
-        }
+  public String getMunicipalityName() {
+    return municipalityName;
+  }
 
-        public int getLotNumber() {
-            return lotNumber;
-        }
+  public int getLotNumber() {
+    return lotNumber;
+  }
 
-        public int getSectionNumber() {
-            return sectionNumber;
-        }
+  public int getSectionNumber() {
+    return sectionNumber;
+  }
 
-        public String getName() {
-            return name;
-        }
+  public String getName() {
+    return name;
+  }
 
-        public float getArea() {
-            return area;
-        }
+  public float getArea() {
+    return area;
+  }
 
-        public String getNameOfOwner() {
-            return nameOfOwner;
-        }
+  public String getNameOfOwner() {
+    return nameOfOwner;
+  }
 
-        public void setNameOfOwner(String nameOfOwner) {
-            this.nameOfOwner = nameOfOwner;
-        }
+  public void setNameOfOwner(String nameOfOwner) {
+    this.nameOfOwner = nameOfOwner;
+  }
 
-        public String toString() {
-          return this.municipalityNumber + "-" + this.lotNumber + "/" + this.sectionNumber;
-        }
+  public String toString() {
+    return this.municipalityNumber + "-" + this.lotNumber + "/" + this.sectionNumber;
+  }
 }
