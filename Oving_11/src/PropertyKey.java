@@ -1,6 +1,7 @@
 import java.util.Objects;
 
 public class PropertyKey {
+
   private final int municipalityNumber;
   private final int lotNumber;
   private final int sectionNumber;
@@ -25,8 +26,12 @@ public class PropertyKey {
 
   @Override
   public boolean equals(Object o) {
-    if (this == o) return true;
-    if (!(o instanceof PropertyKey)) return false;
+    if (this == o) {
+      return true;
+    }
+    if (!(o instanceof PropertyKey)) {
+      return false;
+    }
     PropertyKey that = (PropertyKey) o;
     return municipalityNumber == that.municipalityNumber &&
         lotNumber == that.lotNumber &&
