@@ -14,11 +14,11 @@ public class PropertyKey {
   private final int sectionNumber;
 
   /**
-   * Constructor for property key
+   * Constructor for property key.
    *
    * @param municipalityNumber the municipality number
-   * @param lotNumber the lot number
-   * @param sectionNumber the section number
+   * @param lotNumber          the lot number
+   * @param sectionNumber      the section number
    */
 
   public PropertyKey(int municipalityNumber, int lotNumber, int sectionNumber) {
@@ -28,7 +28,7 @@ public class PropertyKey {
   }
 
   /**
-   * Getter for municipality number
+   * Getter for municipality number.
    *
    * @return municipality number
    */
@@ -37,7 +37,7 @@ public class PropertyKey {
   }
 
   /**
-   * Getter for lot number
+   * Getter for lot number.
    *
    * @return lot number
    */
@@ -46,7 +46,7 @@ public class PropertyKey {
   }
 
   /**
-   * Getter for section number
+   * Getter for section number.
    *
    * @return section number
    */
@@ -55,7 +55,7 @@ public class PropertyKey {
   }
 
   /**
-   * Checks if two property keys are equal
+   * Checks if two property keys are equal.
    *
    * @param o the object to compare to
    * @return true if the property keys are equal, false if not
@@ -69,13 +69,14 @@ public class PropertyKey {
       return false;
     }
     PropertyKey that = (PropertyKey) o;
-    return municipalityNumber == that.municipalityNumber &&
-        lotNumber == that.lotNumber &&
-        sectionNumber == that.sectionNumber;
+    return municipalityNumber == that.municipalityNumber
+        && lotNumber == that.lotNumber
+        && sectionNumber == that.sectionNumber;
   }
 
   /**
-   * Generates a hash code for the property key
+   * Generates a hash code for the property key.
+   *
    * @return the hash code
    */
   @Override
@@ -84,7 +85,8 @@ public class PropertyKey {
   }
 
   /**
-   * Provides a string representation of a property key
+   * Provides a string representation of a property key.
+   *
    * @return a string representation of a property key
    */
   @Override
