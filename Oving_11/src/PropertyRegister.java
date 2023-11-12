@@ -19,12 +19,49 @@ public class PropertyRegister {
   }
 
   /**
-   * Adds a property to the register
+   * Adds a property with name to the register
    *
-   * @param property the property to add
+   * @param municipalityNumber the municipality number
+   * @param municipalityName   the municipality name
+   * @param lotNumber          the lot number
+   * @param sectionNumber      the section number
+   * @param name               the name
+   * @param area               the area
+   * @param nameOfOwner        the name of the owner
+   * @throws IllegalArgumentException if property already exists
    */
-  public void registerProperty(Property property) {
+  public void registerProperty(int municipalityNumber, String municipalityName, int lotNumber,
+      int sectionNumber, String name, double area, String nameOfOwner)
+      throws IllegalArgumentException {
+    Property property = new Property(municipalityNumber, municipalityName, lotNumber, sectionNumber,
+        name, area, nameOfOwner);
+    if (properties.containsKey(property.toString())) {
+      throw new IllegalArgumentException("Property already exists");
+    }
     properties.put(property.toString(), property);
+
+  }
+
+  /**
+   * Adds a property with name to the register
+   *
+   * @param municipalityNumber the municipality number
+   * @param municipalityName   the municipality name
+   * @param lotNumber          the lot number
+   * @param sectionNumber      the section number
+   * @param area               the area
+   * @param nameOfOwner        the name of the owner
+   * @throws IllegalArgumentException if property already exists
+   */
+  public void registerProperty(int municipalityNumber, String municipalityName, int lotNumber,
+      int sectionNumber, double area, String nameOfOwner) throws IllegalArgumentException {
+    Property property = new Property(municipalityNumber, municipalityName, lotNumber, sectionNumber,
+        area, nameOfOwner);
+    if (properties.containsKey(property.toString())) {
+      throw new IllegalArgumentException("Property already exists");
+    }
+    properties.put(property.toString(), property);
+
   }
 
   /**
@@ -39,15 +76,15 @@ public class PropertyRegister {
   /**
    * Finds a property from the register
    *
-   * @param property the property key
-   * @throws IllegalArgumentException if property is null
+   * @param property the property
    * @return the property (Property)
+   * @throws IllegalArgumentException if property is null
    */
-  public Property findProperty(Property property) throws IllegalArgumentException {
+  public String findPropertyKey(Property property) throws IllegalArgumentException {
     if (property == null) {
       throw new IllegalArgumentException("Property cannot be null");
     }
-    return properties.get(property.toString());
+    return property.toString();
   }
 
   /**
@@ -94,4 +131,20 @@ public class PropertyRegister {
 
   }
 
+  /**
+   * Gets all properties
+   *
+   * @return the properties (Property[])
+   */
+
+  public Property[] getProperties() {
+    Property[] properties = new Property[getNumberOfProperties()];
+    int i = 0;
+    for (Property property : this.properties.values()) {
+      properties[i] = property;
+      i++;
+    }
+    return properties;
+
+  }
 }
