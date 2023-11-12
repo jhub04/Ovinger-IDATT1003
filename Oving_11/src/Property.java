@@ -12,7 +12,7 @@ public class Property {
   private final int lotNumber;
   private final int sectionNumber;
   private final String name;
-  private final float area;
+  private final double area;
   private String nameOfOwner;
 
   /**
@@ -27,7 +27,7 @@ public class Property {
    * @param nameOfOwner        the name of the owner
    */
   public Property(int municipalityNumber, String municipalityName, int lotNumber, int sectionNumber,
-      String name, float area, String nameOfOwner) {
+      String name, double area, String nameOfOwner) {
     this.municipalityNumber = municipalityNumber;
     this.municipalityName = municipalityName;
     this.lotNumber = lotNumber;
@@ -49,7 +49,7 @@ public class Property {
    * @param nameOfOwner        the name of the owner
    */
   public Property(int municipalityNumber, String municipalityName, int lotNumber, int sectionNumber,
-      float area, String nameOfOwner) {
+      double area, String nameOfOwner) {
     this.municipalityNumber = municipalityNumber;
     this.municipalityName = municipalityName;
     this.lotNumber = lotNumber;
@@ -109,7 +109,7 @@ public class Property {
    *
    * @return area
    */
-  public float getArea() {
+  public double getArea() {
     return area;
   }
 
@@ -131,4 +131,12 @@ public class Property {
   public void setNameOfOwner(String nameOfOwner) {
     this.nameOfOwner = nameOfOwner;
   }
+
+  @Override
+  public String toString() {
+    return this.municipalityNumber + "-" + this.lotNumber + "/" + this.sectionNumber;
+  }
+
 }
+
+

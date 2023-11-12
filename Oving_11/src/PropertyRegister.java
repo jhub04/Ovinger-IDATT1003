@@ -9,7 +9,7 @@ import java.util.HashMap;
  */
 public class PropertyRegister {
 
-  private final HashMap<PropertyKey, Property> properties;
+  private final HashMap<String, Property> properties;
 
   /**
    * Constructor for property register
@@ -24,29 +24,30 @@ public class PropertyRegister {
    * @param property the property to add
    */
   public void registerProperty(Property property) {
-    PropertyKey key = new PropertyKey(property.getMunicipalityNumber(),
-        property.getLotNumber(),
-        property.getSectionNumber());
-    properties.put(key, property);
+    properties.put(property.toString(), property);
   }
 
   /**
    * Deletes a property from the register
    *
-   * @param key the property key
+   * @param property the property key
    */
-  public void deleteProperty(PropertyKey key) {
-    properties.remove(key);
+  public void deleteProperty(Property property) {
+    properties.remove(property.toString());
   }
 
   /**
    * Finds a property from the register
    *
-   * @param key the property key
+   * @param property the property key
+   * @throws IllegalArgumentException if property is null
    * @return the property (Property)
    */
-  public Property findProperty(PropertyKey key) {
-    return properties.get(key);
+  public Property findProperty(Property property) throws IllegalArgumentException {
+    if (property == null) {
+      throw new IllegalArgumentException("Property cannot be null");
+    }
+    return properties.get(property.toString());
   }
 
   /**
@@ -92,6 +93,5 @@ public class PropertyRegister {
     return propertiesWithLotNumber;
 
   }
-
 
 }
