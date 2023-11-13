@@ -76,15 +76,22 @@ public class PropertyRegister {
   /**
    * Finds a property from the register
    *
-   * @param property the property
+   * @param municipalityNumber the municipality number
+   * @param lotNumber          the lot number
+   * @param sectionNumber      the section number
    * @return the property (Property)
    * @throws IllegalArgumentException if property is null
    */
-  public String findPropertyKey(Property property) throws IllegalArgumentException {
-    if (property == null) {
-      throw new IllegalArgumentException("Property cannot be null");
+  public Property findProperty(int municipalityNumber, int lotNumber, int sectionNumber)
+      throws IllegalArgumentException {
+    for (Property property : properties.values()) {
+      if (property.getMunicipalityNumber() == municipalityNumber
+          && property.getLotNumber() == lotNumber
+          && property.getSectionNumber() == sectionNumber) {
+        return property;
+      }
     }
-    return property.toString();
+    return null;
   }
 
   /**

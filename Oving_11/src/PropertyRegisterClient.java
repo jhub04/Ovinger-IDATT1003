@@ -47,9 +47,45 @@ public class PropertyRegisterClient {
           break;
         case 2:
           for (Property property : register.getProperties()) {
-            System.out.println(property);
+            System.out.println("Property: " + property.toString());
+            System.out.println("Municipality number: " + property.getMunicipalityNumber());
+            System.out.println("Municipality name: " + property.getMunicipalityName());
+            System.out.println("Lot number: " + property.getLotNumber());
+            System.out.println("Section number: " + property.getSectionNumber());
+            System.out.println("Name: " + property.getName());
+            System.out.println("Area: " + property.getArea());
+            System.out.println("Name of owner: " + property.getNameOfOwner());
+            System.out.println();
           }
           break;
+        case 3:
+          System.out.println("Enter municipality number: ");
+          municipalityNumber = scanner.nextInt();
+          System.out.println("Enter lot number: ");
+          lotNumber = scanner.nextInt();
+          System.out.println("Enter section number: ");
+          sectionNumber = scanner.nextInt();
+
+          Property property = register.findProperty(municipalityNumber, lotNumber, sectionNumber);
+          if (property != null) {
+            System.out.println("\nProperty: " + property);
+            System.out.println("Municipality number: " + property.getMunicipalityNumber());
+            System.out.println("Municipality name: " + property.getMunicipalityName());
+            System.out.println("Lot number: " + property.getLotNumber());
+            System.out.println("Section number: " + property.getSectionNumber());
+            System.out.println("Name: " + property.getName());
+            System.out.println("Area: " + property.getArea());
+            System.out.println("Name of owner: " + property.getNameOfOwner());
+            System.out.println();
+          } else {
+            System.out.println("Property not found");
+          }
+          break;
+        case 4:
+          System.out.println("Average area: " + register.getAverageArea());
+          break;
+        case 5:
+          System.exit(0);
 
 
       }
