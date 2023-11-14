@@ -1,10 +1,19 @@
 import java.util.Scanner;
 
+/**
+ * Represents a client for the property register.
+ */
 public class PropertyRegisterClient {
+
 
   PropertyRegister register = new PropertyRegister();
   Scanner scanner = new Scanner(System.in);
 
+  /**
+   * Main method
+   *
+   * @param args command line arguments
+   */
   public static void main(String[] args) {
     PropertyRegisterClient client = new PropertyRegisterClient();
     client.testData();
@@ -14,6 +23,9 @@ public class PropertyRegisterClient {
     }
   }
 
+  /**
+   * Adds some test data to the register
+   */
   public void testData() {
     register.registerProperty(1445, "Gloppen", 77, 631, 1017.6, "Jens Olsen");
     register.registerProperty(1445, "Gloppen", 77, 131, "Syningom", 661.3, "Nicolay Madsen");
@@ -22,6 +34,11 @@ public class PropertyRegisterClient {
     register.registerProperty(1445, "Gloppen", 69, 47, "Høiberg", 1339.4, "Elsa Indregård");
 
   }
+
+  /**
+   * Prints the menu and handles user input
+   *
+   */
 
   public void menu() {
     System.out.println("\nMenu:");
