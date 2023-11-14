@@ -1,0 +1,19 @@
+<mxfile host="app.diagrams.net" modified="2023-11-13T10:36:53.463Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" etag="FbSlj5v2hDb27HhIuCe0" version="22.1.0" type="device">
+  <diagram name="Page-1" id="v6wrhpUrtqQ9s_XCoTjQ">
+    <mxGraphModel dx="1242" dy="828" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="lAMArhDyYnhvpbxitdlq-1" value="Actor" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="220" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="lAMArhDyYnhvpbxitdlq-2" value="PropertyRegisterClient" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="220" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="lAMArhDyYnhvpbxitdlq-3" value="PropertyRegister" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="460" y="220" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

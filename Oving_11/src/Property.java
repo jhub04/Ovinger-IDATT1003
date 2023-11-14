@@ -132,10 +132,28 @@ public class Property {
     this.nameOfOwner = nameOfOwner;
   }
 
+  /**
+   * Returns the property as a string
+   *
+   * @return property as a string
+   */
   @Override
   public String toString() {
-    return this.municipalityNumber + "-" + this.lotNumber + "/" + this.sectionNumber;
+    if (this.getName().isEmpty()) {
+      return "Municipality number: " + municipalityNumber + ", Municipality name: "
+          + municipalityName
+          + ", Lot number: " + lotNumber + ", Section number: " + sectionNumber + ", Area: " + area
+          + ", Name of owner: " + nameOfOwner + "\n";
+    } else {
+      return "Municipality number: " + municipalityNumber + ", Municipality name: "
+          + municipalityName
+          + ", Lot number: " + lotNumber + ", Section number: " + sectionNumber + ", Name: " + name
+          + ", Area: " + area + ", Name of owner: " + nameOfOwner + "\n";
+    }
   }
+
+  public String key() {
+    return municipalityNumber + "-" + lotNumber + "/" + sectionNumber;}
 
 }
 

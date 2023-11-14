@@ -35,10 +35,10 @@ public class PropertyRegister {
       throws IllegalArgumentException {
     Property property = new Property(municipalityNumber, municipalityName, lotNumber, sectionNumber,
         name, area, nameOfOwner);
-    if (properties.containsKey(property.toString())) {
+    if (properties.containsKey(property.key())) {
       throw new IllegalArgumentException("Property already exists");
     }
-    properties.put(property.toString(), property);
+    properties.put(property.key(), property);
 
   }
 
@@ -57,10 +57,10 @@ public class PropertyRegister {
       int sectionNumber, double area, String nameOfOwner) throws IllegalArgumentException {
     Property property = new Property(municipalityNumber, municipalityName, lotNumber, sectionNumber,
         area, nameOfOwner);
-    if (properties.containsKey(property.toString())) {
+    if (properties.containsKey(property.key())) {
       throw new IllegalArgumentException("Property already exists");
     }
-    properties.put(property.toString(), property);
+    properties.put(property.key(), property);
 
   }
 
@@ -70,7 +70,7 @@ public class PropertyRegister {
    * @param property the property key
    */
   public void deleteProperty(Property property) {
-    properties.remove(property.toString());
+    properties.remove(property.key());
   }
 
   /**
@@ -80,10 +80,8 @@ public class PropertyRegister {
    * @param lotNumber          the lot number
    * @param sectionNumber      the section number
    * @return the property (Property)
-   * @throws IllegalArgumentException if property is null
    */
-  public Property findProperty(int municipalityNumber, int lotNumber, int sectionNumber)
-      throws IllegalArgumentException {
+  public Property findProperty(int municipalityNumber, int lotNumber, int sectionNumber) {
     for (Property property : properties.values()) {
       if (property.getMunicipalityNumber() == municipalityNumber
           && property.getLotNumber() == lotNumber
@@ -153,5 +151,17 @@ public class PropertyRegister {
     }
     return properties;
 
+  }
+
+  /**
+   * Prints all properties
+   *
+   */
+  public void printProperties() {
+    String output = "";
+    for (Property property : properties.values()) {
+      output += property.toString();
+    }
+    System.out.println(output);
   }
 }
