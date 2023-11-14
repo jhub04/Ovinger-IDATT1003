@@ -158,9 +158,9 @@ public class PropertyRegister {
    *
    */
   public void printProperties() {
-    String output = "";
+    StringBuilder output = new StringBuilder();
     for (Property property : properties.values()) {
-      output += property.toString();
+      output.append(property.toString());
     }
     System.out.println(output);
   }
